@@ -145,7 +145,21 @@
           "options": {
             "settings": {
               "navigation": {},
-              "contextPath": "/Airline"
+              "contextPath": "/Airline",
+              "content": {
+                "body": {
+                  "sections": {
+                    "CustomMapSection": {
+                      "template": "fpmdemo.ext.fragment.CustomMapSection",
+                      "position": {
+                        "placement": "Before",
+                        "anchor": "TravelData"
+                      },
+                      "title": "Maps"
+                    }
+                  }
+                }
+              }
             }
           },
           "controlAggregation": "midColumnPages",

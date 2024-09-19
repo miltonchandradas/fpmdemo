@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+    <Image id="myImage" src="ext/fragment/map/map-{AirlineID}.png" width="100%" />
+
+</core:FragmentDefinition>
