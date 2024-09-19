@@ -3,10 +3,13 @@
     xmlns="sap.m"
     xmlns:macros="sap.fe.macros"
     xmlns:html="http://www.w3.org/1999/xhtml" controllerName="fpmdemo.ext.main.Main">
-    <Page id="Main" title="{i18n>MainTitle}">
+    <Page id="Main" title="{i18n&gt;MainTitle}">
         <content>
             <VBox id="myVBox" class="sapUiLargeMargin">
-                <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields" id="myFilterBar"/>
+                <Panel id="myPanel1" headerText="Filter Bar" class="sapUiContentPadding">
+                    <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields" id="myFilterBar"/>
+                </Panel>
+                <macros:Chart id="myChart" metaPath="@com.sap.vocabularies.UI.v1.Chart#MyChart" filterBar="myFilterBar" personalization="Type,Item,Sort" selectionMode="Single"/>
             </VBox>
         </content>
     </Page>
