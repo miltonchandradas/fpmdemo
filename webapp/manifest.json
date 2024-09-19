@@ -60,7 +60,8 @@
         "sap.m": {},
         "sap.ui.core": {},
         "sap.fe.core": {},
-        "sap.fe.templates": {}
+        "sap.fe.templates": {},
+        "sap.f": {}
       }
     },
     "contentDensities": {
@@ -92,17 +93,28 @@
       "css": []
     },
     "routing": {
-      "config": {},
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
       "routes": [
         {
           "name": "BookedFlightsMain",
           "pattern": ":?query:",
-          "target": "BookedFlightsMain"
+          "target": [
+            "BookedFlightsMain"
+          ]
         },
         {
           "name": "AirlineObjectPage",
           "pattern": "Airline({AirlineKey}):?query:",
-          "target": "AirlineObjectPage"
+          "target": [
+            "BookedFlightsMain",
+            "AirlineObjectPage"
+          ]
         }
       ],
       "targets": {
@@ -122,7 +134,9 @@
                 }
               }
             }
-          }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
         },
         "AirlineObjectPage": {
           "type": "Component",
@@ -133,9 +147,17 @@
               "navigation": {},
               "contextPath": "/Airline"
             }
-          }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/Airline({AirlineKey})"
         }
       }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
     }
   }
 }
