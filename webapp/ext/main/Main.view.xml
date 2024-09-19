@@ -11,7 +11,7 @@
                     <Text id="myText1" text="Filter: {fbConditions>/filtersTextInfo}" />
                     <macros:FilterBar metaPath="@com.sap.vocabularies.UI.v1.SelectionFields" id="myFilterBar" search=".handlers.onFiltersChanged" filterChanged=".handlers.onFiltersChanged"/>
                 </Panel>
-                <macros:Chart id="myChart" metaPath="@com.sap.vocabularies.UI.v1.Chart#MyChart" filterBar="myFilterBar" personalization="Type,Item,Sort" selectionMode="Single"/>
+                <macros:Chart id="myChart" metaPath="@com.sap.vocabularies.UI.v1.Chart#MyChart" filterBar="myFilterBar" personalization="Type,Item,Sort" selectionMode="Single" selectionChange=".onSelectionChange"/>
                 <Panel id="myPanel2" headerText="Additional Filter Bar Info" class="sapUiContentPadding">
                     <ce:CodeEditor id="myCodeEditor" value="{fbConditions>/allFilters}" height="350px" lineNumbers="false"></ce:CodeEditor>
                 </Panel>

@@ -59,7 +59,8 @@
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
-        "sap.fe.core": {}
+        "sap.fe.core": {},
+        "sap.fe.templates": {}
       }
     },
     "contentDensities": {
@@ -97,6 +98,11 @@
           "name": "BookedFlightsMain",
           "pattern": ":?query:",
           "target": "BookedFlightsMain"
+        },
+        {
+          "name": "AirlineObjectPage",
+          "pattern": "Airline({AirlineKey}):?query:",
+          "target": "AirlineObjectPage"
         }
       ],
       "targets": {
@@ -107,7 +113,25 @@
           "options": {
             "settings": {
               "viewName": "fpmdemo.ext.main.Main",
-              "contextPath": "/BookedFlights"
+              "contextPath": "/BookedFlights",
+              "navigation": {
+                "Airline": {
+                  "detail": {
+                    "route": "AirlineObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "AirlineObjectPage": {
+          "type": "Component",
+          "id": "AirlineObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Airline"
             }
           }
         }

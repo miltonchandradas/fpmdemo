@@ -14,6 +14,17 @@ sap.ui.define(
         oView.byId("myFilterBar").triggerSearch();
         oView.setModel(mFBConditions, "fbConditions");
       },
+
+      onSelectionChange: function (oEvent) {
+        if (oEvent.getParameter("selected")) {
+          const data = oEvent.getParameter("data")[0].data;
+  
+          const routing = this.getExtensionAPI().routing;
+          routing.navigateToRoute("AirlineObjectPage", {AirlineKey: `'${data.AirlineID}'`})
+          // alert(JSON.stringify(data));
+        }
+      },
+      
       handlers: {
         onFiltersChanged: function (oEvent) {
           let oView = this.getView();
